@@ -2,5 +2,6 @@
   "tagline": "Optional. Replaces the repository description",
   "demo": "https://example.com",
   "overview": "Optional. Replaces the first README paragraph",
+  "milestones": ["First working version", "Public beta"],
   "hide": false
 }

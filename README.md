@@ -4,19 +4,20 @@ A one-paragraph summary goes here, in plain sentences. The portfolio shows the f
 
 ![Overview screen](docs/overview.png)
 
-## What the portfolio reads from this repo
+![Runs screen](docs/runs.png)
+
+## How a repo gets on the portfolio
+
+A public repo appears only if it has a `portfolio.json` at the root. An empty `{}` is enough. Everything below is read from the repo; only the file's keys are ever written by hand.
 
 - **Name:** the repository name.
-- **Tagline:** the repository description (About, on the right of the repo page).
-- **Demo button:** the Website field in the same About box. Set it once.
-- **Overview:** the first paragraph above.
+- **Tagline:** the repository description (About, on the right of the repo page), or `tagline` in `portfolio.json`.
+- **Demo button:** the Website field in the same About box, or `demo` in `portfolio.json`.
+- **Overview:** the first paragraph of this README, or `overview` in `portfolio.json`.
 - **Gallery:** every image in this README, in order, up to six.
-- **Status:** worked out from activity. A push in the last 30 days is Building. A release or a Website makes it Live. Otherwise it is shown as quiet.
+- **Status:** worked out from activity. A push in the last 30 days is Building. A release or a Website makes it Live. Archiving the repo marks it Archived.
 - **Stack:** the languages GitHub detects.
-- **Activity:** commits, published releases, and closed milestones.
-- **Milestones:** the `milestones` list in `portfolio.json`. A milestone is done on the date of the first commit whose title contains all its words, and is shown as planned until then.
+- **Activity:** commits, published releases, closed GitHub milestones, and `milestones` from `portfolio.json`.
+- **Milestones:** a milestone is done on the date of the first commit whose title contains all its words, and shown as planned until then.
 - **Writing:** a post with `project: example-project` in its front matter shows up on the project page.
-
-## Optional
-
-Put a `portfolio.json` at the root to override anything above. Every key is optional and the file can be left out. Add the topic `no-portfolio` to hide a repo.
+- **Hiding:** `"hide": true` in `portfolio.json`, or delete the file.

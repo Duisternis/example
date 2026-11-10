@@ -1,7 +1,6 @@
 {
-  "tagline": "Optional. Replaces the repository description",
+  "tagline": "A model repo showing everything the portfolio can render",
   "demo": "https://example.com",
-  "overview": "Optional. Replaces the first README paragraph",
   "milestones": ["First working version", "Public beta"],
   "hide": false
 }

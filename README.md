@@ -14,6 +14,8 @@ A public repo appears only if it has a `portfolio.json` at the root. An empty `{
   "demo": "https://example.com",
   "overview": "Replaces the first README paragraph",
   "milestones": ["First working version", "Public beta"],
+  "figures": [["1,284", "runs this month"], ["97%", "pass rate"]],
+  "stack": { "TypeScript": "what it does here", "CSS": "and here" },
   "hide": false
 }
 ```
@@ -31,7 +33,8 @@ Every key is optional.
 | Source button | The repository itself |
 | Gallery | Images in the `.portfolio/` folder |
 | Status | Activity: pushed in the last 30 days is Building, a release or a Website makes it Live, an archived repo is Archived |
-| Built with | The languages GitHub detects |
+| Built with | The languages GitHub detects, or `stack` (a list, or a map of name to a short note on what it does here) |
+| Figures | `figures`: up to three `[number, label]` pairs shown under the overview, only when a number says it better |
 | Activity | Commits, published releases, and closed GitHub milestones |
 | Milestones | `milestones` in `portfolio.json` |
 | Writing | Posts with `project: example` in their front matter |

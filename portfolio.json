@@ -1,9 +1,11 @@
 {
   "tagline": "A model repo showing everything the portfolio can render",
   "demo": "https://example.com",
-  "milestones": [
-    "First working version",
-    "Public beta"
-  ],
+  "milestones": ["First working version", "Public beta"],
+  "figures": [["1,284", "runs this month"], ["97%", "pass rate"], ["2 min", "median build"]],
+  "stack": {
+    "TypeScript": "the app and its build scripts",
+    "CSS": "styling, no framework"
+  },
   "hide": false
 }

@@ -31,6 +31,7 @@ Every key is optional.
 | Overview | The first paragraph of this README, or `overview` |
 | Demo button | The Website field in the repo's About box, or `demo` |
 | Source button | The repository itself |
+| Logo | `.portfolio/logo.svg` (or `.png`, `.webp`): one colour on a transparent background. The site draws it in the theme colour, so it is dark on light and light on dark. Without it, a default mark is used |
 | Gallery | Images in the `.portfolio/` folder |
 | Status | Activity: pushed in the last 30 days is Building, a release or a Website makes it Live, an archived repo is Archived |
 | Built with | The languages GitHub detects, or `stack` (a list, or a map of name to a short note on what it does here) |

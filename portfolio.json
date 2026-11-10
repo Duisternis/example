@@ -1,6 +1,9 @@
 {
   "tagline": "A model repo showing everything the portfolio can render",
   "demo": "https://example.com",
-  "milestones": ["First working version", "Public beta"],
+  "milestones": [
+    "First working version",
+    "Public beta"
+  ],
   "hide": false
 }

@@ -70,7 +70,7 @@ export function build(now = new Date()) {
     periods[n] = {
       visitors,
       views,
-      duration: 96 + n / 3,
+      duration: Math.round(96 + n / 3),
       bounce: Math.round((56 - n / 12) * 10) / 10,
       daily,
       pages: split(PAGES, views, n + 1),

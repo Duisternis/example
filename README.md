@@ -42,15 +42,9 @@ Every key is optional.
 
 ## Stats
 
-To count a project's visits, add the portfolio's script to its pages, and register the project's id and host in the portfolio's `src/server/analytics/sites.ts`:
+This site is counted by the portfolio's script (`public/index.html` has the tag), and the portfolio reads the numbers from its own collector. `portfolio.json` says where: `"stats": "https://me-five-taupe.vercel.app/api/stats?site=example"`. The id and allowed host are registered in the portfolio's `src/server/analytics/sites.ts`, which also defines this site's goals and funnels.
 
-```html
-<script defer data-site="example" src="https://me-five-taupe.vercel.app/a.js"></script>
-```
-
-Then set `"stats"` in `portfolio.json` to `https://me-five-taupe.vercel.app/api/stats?site=example`, and the project appears in the portfolio's Analytics page. The script sets no cookie and sends no address; it reports the page, the referrer, the screen width and the time the page was in view. `window.analytics.track('name')` counts an event.
-
-A project that already has its own numbers can instead publish them as JSON at any URL with CORS open. The shape is the dashboard itself: `version` (2), `site`, `days` (daily `visitors`, `views`, `duration`, `bounce` and `conv`, oldest first, at least 180), then any of `pages`, `sources`, `devices`, `countries`, `events`, `goals`, `flow`, `funnels`, `retention`, `friction`, `pageReports`, `searches`, `vitals`, `vitalPages` and `hours`. Only `days` is required, and a section left out shows as not reported.
+The app marks sections of each page with `data-section` and counts actions with `window.analytics.track(name, value, label)`: a run started, a report exported, settings saved, and what is typed into the docs search.
 
 ## Gallery
 

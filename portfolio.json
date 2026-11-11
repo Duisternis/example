@@ -1,10 +1,26 @@
 {
-  "tagline": "A model repo showing everything the portfolio can render",
-  "demo": "https://example.com",
-  "milestones": ["First working version", "Public beta"],
-  "figures": [["1,284", "runs this month"], ["97%", "pass rate"], ["2 min", "median build"]],
+  "tagline": "A small build dashboard that the portfolio counts the visits of",
+  "demo": "https://example-kappa-opal.vercel.app",
+  "milestones": [
+    "First working version",
+    "Public beta"
+  ],
+  "figures": [
+    [
+      "1,284",
+      "runs this month"
+    ],
+    [
+      "97%",
+      "pass rate"
+    ],
+    [
+      "2 min",
+      "median build"
+    ]
+  ],
   "stack": {
-    "TypeScript": "the app and its build scripts",
+    "JavaScript": "the app, with no build step",
     "CSS": "styling, no framework"
   },
   "stats": "https://me-five-taupe.vercel.app/api/stats?site=example",

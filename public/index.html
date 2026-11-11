@@ -3,17 +3,26 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark light" />
     <title>Example</title>
+    <link rel="icon" href="/favicon.svg" />
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
-    <main>
-      <h1>Example</h1>
-      <p>
-        A fake build dashboard, here so the portfolio has a live site to read numbers from. It
-        counts its own visits with the portfolio's script, and the numbers are real, though there are very few.
-      </p>
-    </main>
+    <div class="app">
+      <nav aria-label="Main">
+        <a class="brand" href="/" data-link>Example</a>
+        <a href="/" data-link>Overview</a>
+        <a href="/runs" data-link>Runs</a>
+        <a href="/reports" data-link>Reports</a>
+        <a href="/settings" data-link>Settings</a>
+        <span class="gap"></span>
+        <a href="/docs" data-link>Docs</a>
+        <a href="/changelog" data-link>Changelog</a>
+      </nav>
+      <main id="view"></main>
+    </div>
+    <script defer src="/app.js"></script>
     <script defer data-site="example" src="https://me-five-taupe.vercel.app/a.js"></script>
   </body>
 </html>

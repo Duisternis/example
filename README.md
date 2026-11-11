@@ -42,27 +42,9 @@ Every key is optional.
 
 ## Stats
 
-A project that counts its own visits can show them on the portfolio's Analytics page. Set `"stats"` in `portfolio.json` to a URL that returns JSON, with CORS open (`access-control-allow-origin: *`). It carries aggregates only, never a visitor:
+A project that counts its own visits can show them on the portfolio's Analytics page. Set `"stats"` in `portfolio.json` to a URL that returns JSON, with CORS open (`access-control-allow-origin: *`). It carries aggregates only, never a visitor, and has the shape of the dashboard itself: `version` (2), `site`, `days` (daily `visitors`, `views`, `duration`, `bounce` and `conv`, oldest first, at least 180 of them), then any of `pages`, `sources`, `devices`, `countries`, `events`, `goals`, `flow`, `funnels`, `retention`, `friction`, `pageReports`, `searches`, `vitals`, `vitalPages` and `hours`. Only `days` is required: a section a site leaves out shows as not reported. `"sample": true` tells the page the numbers are made up.
 
-```json
-{
-  "version": 1,
-  "site": "Example",
-  "updated": "2026-11-11T10:00:00Z",
-  "periods": {
-    "7": {
-      "visitors": 736, "views": 1636, "duration": 98, "bounce": 55.4,
-      "daily": [{ "date": "2026-11-11", "visitors": 120, "views": 244 }],
-      "pages": [{ "label": "/", "n": 560 }],
-      "countries": [{ "label": "India", "n": 140 }],
-      "sources": [{ "label": "Search", "n": 206 }],
-      "devices": [{ "label": "Desktop", "n": 456 }]
-    }
-  }
-}
-```
-
-Periods are `"7"`, `"30"` and `"90"` days. `duration` is seconds and `bounce` is a percentage. How the numbers are produced is up to the project. [`api/stats.ts`](api/stats.ts) makes up numbers, so the portfolio has something to read.
+[`api/stats.ts`](api/stats.ts) is a complete example. How the numbers are produced is up to the project.
 
 ## Gallery
 

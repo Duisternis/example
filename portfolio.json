@@ -7,6 +7,6 @@
     "TypeScript": "the app and its build scripts",
     "CSS": "styling, no framework"
   },
-  "stats": "https://example-kappa-opal.vercel.app/api/stats",
+  "stats": "https://me-five-taupe.vercel.app/api/stats?site=example",
   "hide": false
 }

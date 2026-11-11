@@ -42,9 +42,15 @@ Every key is optional.
 
 ## Stats
 
-A project that counts its own visits can show them on the portfolio's Analytics page. Set `"stats"` in `portfolio.json` to a URL that returns JSON, with CORS open (`access-control-allow-origin: *`). It carries aggregates only, never a visitor, and has the shape of the dashboard itself: `version` (2), `site`, `days` (daily `visitors`, `views`, `duration`, `bounce` and `conv`, oldest first, at least 180 of them), then any of `pages`, `sources`, `devices`, `countries`, `events`, `goals`, `flow`, `funnels`, `retention`, `friction`, `pageReports`, `searches`, `vitals`, `vitalPages` and `hours`. Only `days` is required: a section a site leaves out shows as not reported. `"sample": true` tells the page the numbers are made up.
+To count a project's visits, add the portfolio's script to its pages, and register the project's id and host in the portfolio's `src/server/analytics/sites.ts`:
 
-[`api/stats.ts`](api/stats.ts) is a complete example. How the numbers are produced is up to the project.
+```html
+<script defer data-site="example" src="https://me-five-taupe.vercel.app/a.js"></script>
+```
+
+Then set `"stats"` in `portfolio.json` to `https://me-five-taupe.vercel.app/api/stats?site=example`, and the project appears in the portfolio's Analytics page. The script sets no cookie and sends no address; it reports the page, the referrer, the screen width and the time the page was in view. `window.analytics.track('name')` counts an event.
+
+A project that already has its own numbers can instead publish them as JSON at any URL with CORS open. The shape is the dashboard itself: `version` (2), `site`, `days` (daily `visitors`, `views`, `duration`, `bounce` and `conv`, oldest first, at least 180), then any of `pages`, `sources`, `devices`, `countries`, `events`, `goals`, `flow`, `funnels`, `retention`, `friction`, `pageReports`, `searches`, `vitals`, `vitalPages` and `hours`. Only `days` is required, and a section left out shows as not reported.
 
 ## Gallery
 

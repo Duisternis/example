@@ -1,8 +1,8 @@
 # Example
 
-A small build dashboard, used as the model repository for the portfolio. This paragraph is the project overview on the site, so say plainly what the project does and why it exists before anything else.
+The reference repository for this portfolio. It pretends to be a small build dashboard so that every part of a project page has something to show: a tagline, a demo link, figures, a stack, milestones, a logo and a gallery. The numbers on it are made up.
 
-This repo shows everything the portfolio can render from a project. Copy its layout for a new project, or check an existing one against it.
+Copy its layout for a new project, or check an existing one against it.
 
 ## Getting a repo onto the portfolio
 

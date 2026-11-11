@@ -40,6 +40,30 @@ Every key is optional.
 | Milestones | `milestones` in `portfolio.json` |
 | Writing | Posts with `project: example` in their front matter |
 
+## Stats
+
+A project that counts its own visits can show them on the portfolio's Analytics page. Set `"stats"` in `portfolio.json` to a URL that returns JSON, with CORS open (`access-control-allow-origin: *`). It carries aggregates only, never a visitor:
+
+```json
+{
+  "version": 1,
+  "site": "Example",
+  "updated": "2026-11-11T10:00:00Z",
+  "periods": {
+    "7": {
+      "visitors": 736, "views": 1636, "duration": 98, "bounce": 55.4,
+      "daily": [{ "date": "2026-11-11", "visitors": 120, "views": 244 }],
+      "pages": [{ "label": "/", "n": 560 }],
+      "countries": [{ "label": "India", "n": 140 }],
+      "sources": [{ "label": "Search", "n": 206 }],
+      "devices": [{ "label": "Desktop", "n": 456 }]
+    }
+  }
+}
+```
+
+Periods are `"7"`, `"30"` and `"90"` days. `duration` is seconds and `bounce` is a percentage. How the numbers are produced is up to the project. [`api/stats.ts`](api/stats.ts) makes up numbers, so the portfolio has something to read.
+
 ## Gallery
 
 Put images in a `.portfolio/` folder. They show in filename order, up to twelve, and the file name is the caption: `01-overview.png` is shown as "overview".

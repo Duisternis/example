@@ -1,0 +1,5 @@
+body { font: 15px system-ui; margin: 0; background: #000; color: #fff; }
+main { max-width: 520px; margin: 20vh auto; padding: 0 24px; }
+h1 { font-size: 18px; font-weight: 600; }
+p { color: #999; line-height: 1.6; }
+a { color: inherit; }
